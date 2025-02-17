@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import useStorage from '../../../hooks/useStorage';
-import  PasswordItens  from '../../../components/passwordItens';
+import PasswordItens  from '../../../components/passwordItens';
 
 export default function Passwords() {
   const [listPasswords, setListPasswords] = useState<any>([]);
@@ -16,7 +16,8 @@ export default function Passwords() {
   }
 
   async function handleDeletePassword(item: any) {
-    const password = await removeItem('@pass', item);
+    await removeItem('@pass', item);
+    alert("Senha removida com sucesso!");
     loadPasswords();
   }
 
